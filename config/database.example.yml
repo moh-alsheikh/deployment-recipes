@@ -4,6 +4,6 @@ production:
   database: test_deployment_db_production
   pool: 5
   host: localhost
-  username: test_db_user
-  password: test_db_user
+  username: dbuser
+  password: dbuser
   

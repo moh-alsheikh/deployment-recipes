@@ -23,7 +23,6 @@ set :use_sudo, false
 
 set :scm, "git"
 set :repository, "."
-#set :branch, "master"
 set :branch, "master"
 
 default_run_options[:pty] = true

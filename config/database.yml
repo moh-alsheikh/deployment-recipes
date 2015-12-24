@@ -4,8 +4,8 @@ development:
   database: test_deployment_db_development
   pool: 5
   host: localhost
-  username: test_db_user
-  password: test_db_user
+  username: dbuser
+  password: dbuser
 
 test:
   adapter: postgresql
@@ -13,8 +13,8 @@ test:
   database: test_deployment_db_test
   pool: 5
   host: localhost
-  username: test_db_user
-  password: test_db_user
+  username: dbuser
+  password: dbuser
   
 production:
   adapter: postgresql
@@ -22,7 +22,7 @@ production:
   database: test_deployment_db_production
   pool: 5
   host: localhost
-  username: test_db_user
-  password: test_db_user
+  username: dbuser
+  password: dbuser
   
 
