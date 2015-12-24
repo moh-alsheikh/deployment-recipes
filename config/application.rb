@@ -11,9 +11,9 @@ module TestDeployment
     config.time_zone = 'Riyadh'
     config.active_record.default_timezone = :local
     
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    I18n.enforce_available_locales = true
-    config.i18n.default_locale = :ar
+    #config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    #I18n.enforce_available_locales = true
+    #config.i18n.default_locale = :ar
     
     config.encoding = "utf-8"
     
