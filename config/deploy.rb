@@ -30,13 +30,16 @@ ssh_options[:forward_agent] = true
 #ssh_options[ :port ] = 44444
 
 after "deploy:cold", "unicorn:restart"
-after "deploy:cold", "utility:djstop"
-after "deploy:cold", "utility:djstart"
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 
 __END__
 
+
+after "deploy:cold", "utility:djstop"
+after "deploy:cold", "utility:djstart"
+
+#======================================================
 
 #set :whenever_command, "bundle exec whenever"
 
