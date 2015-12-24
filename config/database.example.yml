@@ -1,7 +1,7 @@
 production:
   adapter: postgresql
   encoding: unicode
-  database: test_deployment_db_production
+  database: app_db_production
   pool: 5
   host: localhost
   username: dbuser
