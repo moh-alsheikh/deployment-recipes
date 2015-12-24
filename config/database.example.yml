@@ -1,9 +1,8 @@
 production:
   adapter: postgresql
   encoding: unicode
-  database: app_db_production
+  database: appdeployment_production
   pool: 5
   host: localhost
   username: dbuser
   password: dbuser
-  

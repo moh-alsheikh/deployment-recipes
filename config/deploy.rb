@@ -16,7 +16,7 @@ load "config/recipes/utility"
 server "192.168.8.101", :web, :app, :db, primary: true
 
 set :user, "deployer"
-set :application, "test-deployment"
+set :application, "appdeployment"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via,  :copy
 set :use_sudo, false
