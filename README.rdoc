@@ -1,9 +1,9 @@
-== Rails app deployment recipes
+== Rails deployment recipes
 
-=== rails
-=== git
-=== capistrano 2
-=== postgresql
-=== rbenv
-=== nginx
-=== unicorn
+==== ◎ rails
+==== ◎ git
+==== ◎ capistrano 2
+==== ◎ postgresql
+==== ◎ rbenv
+==== ◎ nginx
+==== ◎ unicorn
