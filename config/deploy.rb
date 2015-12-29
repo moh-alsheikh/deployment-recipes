@@ -12,7 +12,7 @@ load "config/recipes/check"
 load "config/recipes/utility"
 
 
-server "192.168.8.102", :web, :app, :db, primary: true
+server "192.168.8.103", :web, :app, :db, primary: true
 
 set :user, "deployer"
 set :application, "appdeployment"
