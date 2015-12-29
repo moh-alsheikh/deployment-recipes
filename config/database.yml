@@ -23,6 +23,6 @@ production:
   pool: 5
   host: localhost
   username: dbuser
-  password: dbuser
+  password: ENV["DB_PASSWORD"]
   
 

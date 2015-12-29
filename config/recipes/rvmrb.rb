@@ -1,7 +1,5 @@
-# set_default :ruby_version, "1.9.3-p125"
-set_default :ruby_version, "1.9.3-p392"
+set_default :ruby_version, "2.0.0-p353"
 
-#set_default :rbenv_bootstrap, "bootstrap-ubuntu-10-04"
 set_default :rbenv_bootstrap, "bootstrap-ubuntu-12-04"
 
 def mrbenv(command)
@@ -26,7 +24,7 @@ namespace :rvmrb  do
     run "gem install bundler --no-ri --no-rdoc"
     run "gem install rails -v=3.2.12"
 
-    end
-    after "deploy:install", "rvmrb:install"
   end
+  after "deploy:install", "rvmrb:install"
+end
   

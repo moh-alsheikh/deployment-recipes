@@ -20,7 +20,15 @@ end
 namespace :deploy do
   desc "Install everything onto the server"
   task :install do
+    template "environment", "/tmp/environment"
+    run "#{sudo} mv /tmp/environment /etc/environment"
     run "#{sudo} apt-get -y update"
     run "#{sudo} apt-get -y install python-software-properties"
   end
 end
+
+
+__END__
+
+
+sudo adduser deployer --ingroup sudo

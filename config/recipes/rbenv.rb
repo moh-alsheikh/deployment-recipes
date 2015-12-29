@@ -40,8 +40,3 @@ namespace :rbenv do
 
 
 __END__
-
-
-      #run "rbenv #{rbenv_bootstrap}"
-      #run "rbenv install #{ruby_version}"
-      #run "rbenv global #{ruby_version}"

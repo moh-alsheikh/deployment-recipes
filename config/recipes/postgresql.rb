@@ -6,12 +6,13 @@ set_default(:postgresql_database) { "#{application}_production" }
 namespace :postgresql do
   desc "Install the latest stable release of PostgreSQL."
   task :install, roles: :db, only: {primary: true} do
-
-    add_apt_repository 'ppa:pitti/postgresql'
-    run "#{sudo} apt-get install wget ca-certificates"
+    
+    template "pgdg.list", "/tmp/pgdg.list"
+    run "#{sudo} mv /tmp/pgdg.list /etc/apt/sources.list.d/pgdg.list"
+    run "wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+        #{sudo} apt-key add -"
     run "#{sudo} apt-get update"
-    run "#{sudo} apt-get upgrade"
-    run "#{sudo} apt-get install postgresql-9.2 libpq-dev  -y"
+    run "#{sudo} apt-get install postgresql-9.4 libpq-dev  -y"
     
     
   end
@@ -40,41 +41,5 @@ end
 
 
 __END__
-
-    #run "#{sudo} add-apt-repository ppa:pitti/postgresql"
-    #add_apt_repository 'ppa:pitti/postgresql'
-    #run "#{sudo} apt-get -y update"
-    #run "#{sudo} apt-get -y install postgresql libpq-dev"
     
     
-    =====================================================================================
-    
-    Add the following to  environment
-    
-    sudo nano /etc/environment
-    
-    ==========
-    
-LANGUAGE=en_US.UTF-8
-LC_ALL=en_US.UTF-8
-LANG=en_US.UTF-8
-LC_TYPE=en_US.UTF-8
-    
-    
-    =====================================================================================
-    
-    #run "#{sudo} locale-gen en_US.UTF-8"
-    #run "export LANGUAGE=en_US.UTF-8"
-    #run "export LC_ALL=en_US.UTF-8"
-    #run "export LANG=en_US.UTF-8"
-    #run "export LC_TYPE=en_US.UTF-8"
-    
-    
-    run "#{sudo} locale-gen en_US en_US.UTF-8"
-    run "#{sudo} dpkg-reconfigure locales"
-    #run "export LANGUAGE=en_US.UTF-8"
-    #run "export LC_ALL=en_US.UTF-8"
-    
-    =====================================================================================
-    
-    run "#{sudo} pg_createcluster 9.2 main --start"

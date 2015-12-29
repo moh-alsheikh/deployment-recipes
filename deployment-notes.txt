@@ -1,0 +1,71 @@
+    #add_apt_repository 'ppa:pitti/postgresql'
+    
+    =======================
+    
+    1- Create the file /etc/apt/sources.list.d/pgdg.list, and add a line for the repository AND ADD THE FOLLOWING
+      
+       " sudo nano /etc/apt/sources.list.d/pgdg.list " 
+    
+      deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main
+    
+    2- Import the repository signing key, and update the package lists 
+    
+      wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+        sudo apt-key add -
+
+    3- RUN APT UPDATE 
+      
+       sudo apt-get update
+    
+    
+    =====================================================================================
+    
+    Add the following to  environment " sudo nano /etc/environment  "
+    
+      LANGUAGE=en_US.UTF-8
+      LC_ALL=en_US.UTF-8
+      LANG=en_US.UTF-8
+      LC_TYPE=en_US.UTF-8
+      
+    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+    
+    =====================================================================================
+    
+    #run "#{sudo} locale-gen en_US.UTF-8"
+    #run "export LANGUAGE=en_US.UTF-8"
+    #run "export LC_ALL=en_US.UTF-8"
+    #run "export LANG=en_US.UTF-8"
+    #run "export LC_TYPE=en_US.UTF-8"
+    
+    
+    run "#{sudo} locale-gen en_US en_US.UTF-8"
+    run "#{sudo} dpkg-reconfigure locales"
+    #run "export LANGUAGE=en_US.UTF-8"
+    #run "export LC_ALL=en_US.UTF-8"
+    
+    =====================================================================================
+    
+    run "#{sudo} pg_createcluster 9.2 main --start"
+    
+    
+    
+    ============================================
+    
+
+
+    #run "rbenv #{rbenv_bootstrap}"
+    #run "rbenv install #{ruby_version}"
+    #run "rbenv global #{ruby_version}"
+    
+    
+    =======================================================================================
+    
+    
+
+    RAILS_ENV=development bundle exec whenever --update-crontab
+
+    #==================================================================
+
+    kill - delayed jobs
+
+    http://stackoverflow.com/questions/7759543/how-do-i-stop-delayed-job-if-im-running-it-with-the-m-monitor-option

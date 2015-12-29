@@ -24,8 +24,8 @@ namespace :utility do
   
   desc "start delayed jobs"
   task :djstart do
-    #run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec bin/delayed_job start"
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec bin/delayed_job -n 4 start"
+    #run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec bin/delayed_job -n 4 start"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec bin/delayed_job start"
   end
   
   desc "stop delayed jobs"
@@ -35,8 +35,8 @@ namespace :utility do
   
   desc "restart delayed jobs"
   task :djrestart do
-    #run "cd #{current_path};  RAILS_ENV=#{rails_env} bundle exec bin/delayed_job restart"
-    run "cd #{current_path};  RAILS_ENV=#{rails_env} bundle exec bin/delayed_job -n 2 restart"
+    #run "cd #{current_path};  RAILS_ENV=#{rails_env} bundle exec bin/delayed_job -n 2 restart"
+    run "cd #{current_path};  RAILS_ENV=#{rails_env} bundle exec bin/delayed_job restart"
   end
   
   #==================================================================
@@ -80,11 +80,3 @@ namespace :utility do
 end
 
 __END__
-
-RAILS_ENV=development bundle exec whenever --update-crontab
-
-#==================================================================
-
-kill - delayed jobs
-
-http://stackoverflow.com/questions/7759543/how-do-i-stop-delayed-job-if-im-running-it-with-the-m-monitor-option
