@@ -1,4 +1,4 @@
-== Rails deployment recipes
+= Rails deployment recipes
 
 ==== ◎ rails
 ==== ◎ git
