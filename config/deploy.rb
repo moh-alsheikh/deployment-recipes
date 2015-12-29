@@ -12,7 +12,6 @@ load "config/recipes/check"
 load "config/recipes/utility"
 
 
-#server "46.101.131.140", :web, :app, :db, primary: true
 server "192.168.8.102", :web, :app, :db, primary: true
 
 set :user, "deployer"
@@ -34,17 +33,3 @@ after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 
 __END__
-
-
-after "deploy:cold", "utility:djstop"
-after "deploy:cold", "utility:djstart"
-
-#======================================================
-
-#set :whenever_command, "bundle exec whenever"
-
-#after "deploy:cold", "nginx:restart"
-#after "deploy:cold", "utility:jobsrestart"
-#bundle exec rake jobs:work
-
-#ssh_options[:verbose] = :debug

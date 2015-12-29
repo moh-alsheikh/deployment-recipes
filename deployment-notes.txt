@@ -1,3 +1,12 @@
+    sudo adduser deployer --ingroup sudo
+    
+    ssh-copy-id mohammed@192.168.8.103
+    
+    export  DB_PASSWORD="dbuser"
+    
+    
+    =======================
+    
     #add_apt_repository 'ppa:pitti/postgresql'
     
     =======================
@@ -69,3 +78,28 @@
     kill - delayed jobs
 
     http://stackoverflow.com/questions/7759543/how-do-i-stop-delayed-job-if-im-running-it-with-the-m-monitor-option
+    
+    
+    
+    =======================================================================================
+
+    after "deploy:cold", "utility:djstop"
+    after "deploy:cold", "utility:djstart"
+
+    #======================================================
+
+    #set :whenever_command, "bundle exec whenever"
+
+    #after "deploy:cold", "nginx:restart"
+    #after "deploy:cold", "utility:jobsrestart"
+    #bundle exec rake jobs:work
+
+    #ssh_options[:verbose] = :debug
+    
+    
+    ========================================================================================
+    
+    
+    ENV["DB_PASSWORD"]
+    
+    export DB_PASSWORD="dbuser"
